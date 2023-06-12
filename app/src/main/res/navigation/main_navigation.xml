@@ -13,20 +13,20 @@
 
     <fragment
         android:id="@+id/navigation_feed"
-        android:name="com.capstone.mentordeck.ui.home.HomeFragment"
+        android:name="com.capstone.mentordeck.ui.feed.FeedFragment"
         android:label="@string/feed_menu"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_feed"/>
 
     <fragment
         android:id="@+id/navigation_message"
-        android:name="com.capstone.mentordeck.ui.home.HomeFragment"
+        android:name="com.capstone.mentordeck.ui.message.MessageFragment"
         android:label="@string/message_menu"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_message"/>
 
     <fragment
         android:id="@+id/navigation_history"
-        android:name="com.capstone.mentordeck.ui.home.HomeFragment"
-        android:label="@string/home_menu"
-        tools:layout="@layout/fragment_home"/>
+        android:name="com.capstone.mentordeck.ui.history.HistoryFragment"
+        android:label="@string/history_menu"
+        tools:layout="@layout/fragment_history"/>
 
 </navigation>
