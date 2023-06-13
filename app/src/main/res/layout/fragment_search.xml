@@ -20,8 +20,8 @@
 
             <ImageView
                 android:id="@+id/btn_back"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:contentDescription="@string/favorite"
                 android:background="@drawable/ic_round_arrow_back"
                 app:layout_constraintStart_toStartOf="parent"

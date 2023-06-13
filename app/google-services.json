@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "328962493897",
+    "firebase_url": "https://capstone-c23-ps148-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "capstone-c23-ps148",
+    "storage_bucket": "capstone-c23-ps148.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328962493897:android:28b3043e10139be3d0ac18",
+        "android_client_info": {
+          "package_name": "com.capstone.mentordeck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "328962493897-u6uluml4pognqptfgt3v78fjkoap599u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.capstone.mentordeck",
+            "certificate_hash": "3076f550538ed0b4df8671966f57fdef4e09b6b3"
+          }
+        },
+        {
+          "client_id": "328962493897-b3o5a02s7du9p5a7q1aqr0un1sjfdkr0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG5Kku7Xu_oEHQCSx3KvQ9Y1CpeQ2YTRA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "328962493897-b3o5a02s7du9p5a7q1aqr0un1sjfdkr0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

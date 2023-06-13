@@ -10,6 +10,7 @@
     <string name="dont_have_account">Belum punya akun?</string>
     <string name="have_account">Sudah punya akun?</string>
     <string name="back">Kembali</string>
+    <string name="previous">Sebelumnya</string>
 
     <string name="profile">Profil</string>
 
@@ -38,7 +39,9 @@
     <string name="les_fisika">Les Fisika</string>
     <string name="price">Rp. 100.000</string>
     <string name="location">Surabaya</string>
-    <string name="rating">5.0 (1 rb ulasan)</string>
+    <string name="rating">5.0</string>
+    <string name="review_total">100</string>
+    <string name="vertical_line">|</string>
 
     <string name="search_by_category">Cari berdasarkan kategori</string>
 
