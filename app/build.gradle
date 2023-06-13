@@ -47,4 +47,11 @@ dependencies {
 
     implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.15.0'
+
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+
+    //yuyakaido card stack view
+//    implementation "com.yuyakaido.android:card-stack-view:2.3.4"
 }

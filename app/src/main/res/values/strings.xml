@@ -9,6 +9,12 @@
     <string name="forgot_password">Lupa kata sandi?</string>
     <string name="dont_have_account">Belum punya akun?</string>
     <string name="have_account">Sudah punya akun?</string>
+    <string name="back">Kembali</string>
+
+    <string name="profile">Profil</string>
+
+    <string name="review">Ulasan</string>
+    <string name="review_content">Cara mengajar sangat bagus dan mudah dimengerti</string>
 
     <string name="error_invalid_email_format">Format email tidak valid</string>
     <string name="error_wrong_password_format">Minimal 6 karakter</string>
@@ -21,7 +27,49 @@
     <string name="search_hint">Cari</string>
     <string name="favorite">Favorit</string>
 
+    <string name="top_rated">Rating tertinggi</string>
+    <string name="for_you">Untuk kamu</string>
+
+    <string name="see_all">Lihat semua</string>
+
+    <string name="photo">Foto</string>
+
+
+    <string name="les_fisika">Les Fisika</string>
+    <string name="price">Rp. 100.000</string>
+    <string name="location">Surabaya</string>
+    <string name="rating">5.0 (1 rb ulasan)</string>
+
+    <string name="search_by_category">Cari berdasarkan kategori</string>
+
+    <string name="matematika">Matematika</string>
+    <string name="fisika">Fisika</string>
+    <string name="kimia">Kimia</string>
+    <string name="biologi">Biologi</string>
+    <string name="ekonomi">Ekonomi</string>
+    <string name="bahasa_indonesia">Bahasa Indonesia</string>
+    <string name="bahasa_inggris">Bahasa Inggris</string>
+    <string name="geologi">Geologi</string>
+    <string name="sejarah">Sejarah</string>
+    <string name="geografi">Geografi</string>
+
+
+    <string name="set_variant">Atur waktu</string>
+    <string name="duration">1 Jam</string>
+    <string name="mentoring_date">6 Juni 2023</string>
+    <string name="mentoring_time">10:50</string>
+    <string name="mentoring_method">Online</string>
+
+    <string name="comma">,</string>
+
+    <string name="detail_description">Deskripsi</string>
+    <string name="detail_description_text">Les Fisika. Les bisa dilaksanakan secara offline untuk area surabaya dan dilaksanakan secara online untuk area diluar surabaya. Pembelajaran yang diterapkan sesuai dengan kurikulum</string>
+
+    <string name="read_more">Baca Selengkapnya</string>
+    <string name="hide">Sembunyikan</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>
