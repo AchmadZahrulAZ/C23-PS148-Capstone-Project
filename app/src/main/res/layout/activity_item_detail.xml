@@ -5,7 +5,7 @@
     xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.detail.ServiceDetailActivity">
+    tools:context=".ui.detail.ItemDetailActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

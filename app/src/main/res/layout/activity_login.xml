@@ -1,155 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal2"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailEditTextLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="32dp">
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        app:boxCornerRadiusTopStart="5dp"
+        app:boxCornerRadiusBottomStart="5dp"
+        app:boxCornerRadiusTopEnd="5dp"
+        app:boxCornerRadiusBottomEnd="5dp"
+        app:startIconDrawable="@drawable/ic_round_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:alpha="0">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/login"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal2"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailEditTextLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <com.capstone.mentordeck.ui.customview.EmailCustomView
+            android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            app:boxCornerRadiusTopStart="5dp"
-            app:boxCornerRadiusBottomStart="5dp"
-            app:boxCornerRadiusTopEnd="5dp"
-            app:boxCornerRadiusBottomEnd="5dp"
-            app:startIconDrawable="@drawable/ic_round_email"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:hint="@string/email"
+            tools:ignore="SpeakableTextPresentCheck"/>
 
-            <com.capstone.mentordeck.ui.customview.EmailCustomView
-                android:id="@+id/emailEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                android:hint="@string/email"
-                tools:ignore="SpeakableTextPresentCheck"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordEditTextLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        app:boxCornerRadiusTopStart="5dp"
+        app:boxCornerRadiusBottomStart="5dp"
+        app:boxCornerRadiusTopEnd="5dp"
+        app:boxCornerRadiusBottomEnd="5dp"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/ic_round_lock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailEditTextLayout"
+        android:alpha="0">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordEditTextLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <com.capstone.mentordeck.ui.customview.PasswordCustomView
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="10dp"
-            app:boxCornerRadiusTopStart="5dp"
-            app:boxCornerRadiusBottomStart="5dp"
-            app:boxCornerRadiusTopEnd="5dp"
-            app:boxCornerRadiusBottomEnd="5dp"
+            android:ems="10"
+            android:inputType="textPassword"
             app:passwordToggleEnabled="true"
-            app:startIconDrawable="@drawable/ic_round_lock"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailEditTextLayout">
+            android:hint="@string/password"/>
 
-            <com.capstone.mentordeck.ui.customview.PasswordCustomView
-                android:id="@+id/passwordEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPassword"
-                app:passwordToggleEnabled="true"
-                android:hint="@string/password"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/btn_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/forgot_password"
+        style="@style/subtitle"
+        android:textColor="@color/pastel_pink"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginButton"
+        style="@style/button"
+        android:text="@string/login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_forgot_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:alpha="0"/>
+
+    <LinearLayout
+        android:id="@+id/dont_have_account_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        android:alpha="0">
 
         <TextView
-            android:id="@+id/btn_forgot_password"
-            android:text="@string/forgot_password"
-            style="@style/subtitle"
-            android:textColor="@color/pastel_pink"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/loginButton"
-            style="@style/button"
-            android:text="@string/login"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_forgot_password"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <LinearLayout
+            android:id="@+id/tv_dont_have_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginButton">
+            android:text="@string/dont_have_account"
+            android:textSize="14sp"/>
 
-            <TextView
-                android:id="@+id/tv_dont_have_account"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/dont_have_account"
-                android:textSize="12sp"/>
-
-            <TextView
-                android:id="@+id/btn_lets_register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register"
-                android:textColor="@color/pastel_pink"
-                android:textSize="12sp"
-                android:layout_marginStart="2dp"/>
-
-        </LinearLayout>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineHorizontal"
+        <TextView
+            android:id="@+id/btn_lets_register"
             android:layout_width="wrap_content"
-            android:layout_height="64dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_percent="0.4"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:textColor="@color/pastel_pink"
+            android:textSize="14sp"
+            android:layout_marginStart="2dp"
+            android:clickable="true"
+            android:focusable="true"/>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineHorizontal2"
-            android:layout_width="wrap_content"
-            android:layout_height="64dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_percent="0.1"
-            app:layout_constraintStart_toStartOf="parent"/>
+    </LinearLayout>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineVertical"
-            android:layout_width="wrap_content"
-            android:layout_height="64dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_percent="0.5"
-            app:layout_constraintStart_toStartOf="parent"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.4"
+        app:layout_constraintStart_toStartOf="parent"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal2"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-</ScrollView>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progress_bar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:lottie_rawRes="@raw/loading_orange_animation"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,11 +36,18 @@
         </provider>
 
         <activity
-            android:name=".ui.detail.ServiceDetailActivity"
-            android:exported="false"
-            android:screenOrientation="locked" />
+            android:name=".ui.splash.SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme"
+            android:screenOrientation="locked">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name=".ui.detail.ItemDetailActivity"
             android:exported="false"
             android:screenOrientation="locked" />
         <activity
@@ -53,14 +60,8 @@
             android:screenOrientation="locked" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:screenOrientation="locked">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"
+            android:screenOrientation="locked"/>
     </application>
 
 </manifest>

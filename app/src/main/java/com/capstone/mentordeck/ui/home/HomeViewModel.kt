@@ -1,35 +1,28 @@
 package com.capstone.mentordeck.ui.home
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.capstone.mentordeck.UiState
-import com.capstone.mentordeck.database.MentorEntity
-import com.capstone.mentordeck.dummy.DummyData
-import com.capstone.mentordeck.repository.UserRepository
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import com.capstone.mentordeck.data.model.UserModel
+import com.capstone.mentordeck.data.test.StoryEntity
+import com.capstone.mentordeck.repository.Repository
+import com.capstone.mentordeck.utils.UserPreferences
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val repository: UserRepository): ViewModel() {
+class HomeViewModel @Inject constructor(private val pref: UserPreferences, private val repository: Repository): ViewModel() {
 
-    private val _uiState = MutableStateFlow<UiState<List<MentorEntity>>>(UiState.Loading)
-    val uiState = _uiState.asStateFlow()
+    fun getUser(): LiveData<UserModel> {
+        return pref.getUser().asLiveData()
+    }
 
-//    init {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            repository.getAllMentor().collect { mentor ->
-//                when (mentor.isEmpty()) {
-//                    true -> repository.insertAllMentor(DummyData.mentor)
-//                    else -> _uiState.value = UiState.Success(mentor)
-//                }
-//            }
-//        }
-//    }
+    fun getAllStories(token: String): LiveData<PagingData<StoryEntity>> {
+        return repository.getAllStories(token).cachedIn(viewModelScope)
+    }
 
-    fun getAllMentor() = repository.getAllMentor()
 }

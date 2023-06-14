@@ -2,6 +2,7 @@
     <string name="app_name">Mentor Deck</string>
     <string name="name">Nama</string>
     <string name="email">Email</string>
+    <string name="city">Kabupaten/Kota</string>
     <string name="password">Kata sandi</string>
     <string name="login">Masuk</string>
     <string name="phone_number">Nomor handphone</string>
@@ -11,14 +12,25 @@
     <string name="have_account">Sudah punya akun?</string>
     <string name="back">Kembali</string>
     <string name="previous">Sebelumnya</string>
+    <string name="exit">Keluar</string>
+    <string name="save">Simpan</string>
+
+    <string name="account">Akun</string>
+    <string name="mentor_account">Akun Mentor</string>
+    <string name="address">Alamat</string>
+
+    <string name="help">Bantuan</string>
+    <string name="help_center">Pusat bantuan</string>
 
     <string name="profile">Profil</string>
+
+    <string name="edit_profile">Ubah profil</string>
+
+    <string name="edit_photo">Ubah Foto</string>
 
     <string name="review">Ulasan</string>
     <string name="review_content">Cara mengajar sangat bagus dan mudah dimengerti</string>
 
-    <string name="error_invalid_email_format">Format email tidak valid</string>
-    <string name="error_wrong_password_format">Minimal 6 karakter</string>
 
     <string name="home_menu">Beranda</string>
     <string name="feed_menu">Feed</string>
@@ -71,6 +83,28 @@
     <string name="read_more">Baca Selengkapnya</string>
     <string name="hide">Sembunyikan</string>
 
+    <string name="retry">Coba lagi</string>
+
+
+    <string name="error_not_loaded">Tidak bisa memuat daftar</string>
+
+
+    <string name="success_alert_title">Berhasil</string>
+    <string name="login_alert_message">Berhasil masuk</string>
+    <string name="register_alert_message">Registrasi berhasil</string>
+    <string name="continue_alert_button">Lanjutkan</string>
+    <string name="failed_response_alert_title">Gagal</string>
+    <string name="failed_response_alert_message">Gagal mendapatkan respon</string>
+    <string name="login_failed_alert_title">Gagal masuk</string>
+    <string name="login_failed_alert_message">Email atau kata sandi salah</string>
+    <string name="register_failed_alert_title">Registrasi gagal</string>
+    <string name="register_failed_alert_message">Email telah digunakan</string>
+
+    <string name="error_name_empty">Masukkan nama anda</string>
+    <string name="error_email_empty">Masukkan email anda</string>
+    <string name="error_password_empty">Masukkan password anda</string>
+    <string name="error_invalid_email_format">Format email tidak valid</string>
+    <string name="error_wrong_password_format">Minimal 6 karakter</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

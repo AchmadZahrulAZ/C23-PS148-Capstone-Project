@@ -6,8 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
+import com.capstone.mentordeck.R
 import com.capstone.mentordeck.databinding.FragmentMessageBinding
+import com.capstone.mentordeck.utils.loadImageCircleCropDummy
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MessageFragment : Fragment() {
 
     private var _binding: FragmentMessageBinding? = null
@@ -23,6 +28,14 @@ class MessageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         (activity as AppCompatActivity).supportActionBar?.hide()
+
+        binding?.btnProfile?.setOnClickListener {
+            NavHostFragment
+                .findNavController(this@MessageFragment)
+                .navigate(R.id.action_navigation_message_to_userProfileFragment)
+        }
+
+        binding?.btnProfile?.loadImageCircleCropDummy(R.drawable.furimuitehohoemu)
     }
 
 }
