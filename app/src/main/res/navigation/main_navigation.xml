@@ -9,82 +9,25 @@
         android:id="@+id/navigation_home"
         android:name="com.capstone.mentordeck.ui.home.HomeFragment"
         android:label="@string/home_menu"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_navigation_home_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_userProfileFragment"
-            app:destination="@id/userProfileFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_favoriteFragment"
-            app:destination="@id/favoriteFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home"/>
 
     <fragment
         android:id="@+id/navigation_feed"
         android:name="com.capstone.mentordeck.ui.feed.FeedFragment"
         android:label="@string/feed_menu"
-        tools:layout="@layout/fragment_feed">
-        <action
-            android:id="@+id/action_navigation_feed_to_userProfileFragment"
-            app:destination="@id/userProfileFragment" />
-        <action
-            android:id="@+id/action_navigation_feed_to_favoriteFragment"
-            app:destination="@id/favoriteFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_feed"/>
 
     <fragment
         android:id="@+id/navigation_message"
         android:name="com.capstone.mentordeck.ui.message.MessageFragment"
         android:label="@string/message_menu"
-        tools:layout="@layout/fragment_message">
-        <action
-            android:id="@+id/action_navigation_message_to_userProfileFragment"
-            app:destination="@id/userProfileFragment" />
-        <action
-            android:id="@+id/action_navigation_message_to_favoriteFragment"
-            app:destination="@id/favoriteFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_message"/>
 
     <fragment
         android:id="@+id/navigation_history"
         android:name="com.capstone.mentordeck.ui.history.HistoryFragment"
         android:label="@string/history_menu"
-        tools:layout="@layout/fragment_history">
-        <action
-            android:id="@+id/action_navigation_history_to_userProfileFragment"
-            app:destination="@id/userProfileFragment" />
-        <action
-            android:id="@+id/action_navigation_history_to_favoriteFragment"
-            app:destination="@id/favoriteFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_history"/>
 
-    <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.capstone.mentordeck.ui.search.search.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
-
-    <fragment
-        android:id="@+id/userProfileFragment"
-        android:name="com.capstone.mentordeck.ui.profile.user.UserProfileFragment"
-        android:label="fragment_user_profile"
-        tools:layout="@layout/fragment_user_profile" >
-        <action
-            android:id="@+id/action_userProfileFragment_to_editUserProfileFragment"
-            app:destination="@id/editUserProfileFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/editUserProfileFragment"
-        android:name="com.capstone.mentordeck.ui.profile.EditUserProfileFragment"
-        android:label="fragment_edit_user_profile"
-        tools:layout="@layout/fragment_edit_user_profile" />
-    <fragment
-        android:id="@+id/favoriteFragment"
-        android:name="com.capstone.mentordeck.ui.favorite.FavoriteFragment"
-        android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" />
 
 </navigation>

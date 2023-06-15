@@ -1,5 +1,6 @@
 package com.capstone.mentordeck.ui.feed
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,12 +10,13 @@ import android.view.animation.LinearInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import com.capstone.mentordeck.R
 import com.capstone.mentordeck.adapter.FeedAdapter
 import com.capstone.mentordeck.adapter.LoadingStateAdapter
 import com.capstone.mentordeck.databinding.FragmentFeedBinding
+import com.capstone.mentordeck.ui.favorite.FavoriteActivity
+import com.capstone.mentordeck.ui.profile.user.UserProfileActivity
 import com.capstone.mentordeck.utils.loadImageCircleCropDummy
 import com.yuyakaido.android.cardstackview.*
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,10 +48,12 @@ class FeedFragment : Fragment(), CardStackListener {
 
         (activity as AppCompatActivity).supportActionBar?.hide()
 
+        binding?.btnFavorite?.setOnClickListener {
+            startActivity(Intent(requireContext(), FavoriteActivity::class.java))
+        }
+
         binding?.btnProfile?.setOnClickListener {
-            NavHostFragment
-                .findNavController(this@FeedFragment)
-                .navigate(R.id.action_navigation_feed_to_userProfileFragment)
+            startActivity(Intent(requireContext(), UserProfileActivity::class.java))
         }
 
         binding?.btnProfile?.loadImageCircleCropDummy(R.drawable.furimuitehohoemu)

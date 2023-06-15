@@ -6,6 +6,7 @@ import com.capstone.mentordeck.data.response.StoryResponse
 import com.capstone.mentordeck.data.response.UploadResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiService {
@@ -43,4 +44,8 @@ interface ApiService {
         @Part("lon") lon: Double?
     ): UploadResponse
 
+    @GET("stories")
+    fun getStories(
+        @Header("Authorization") auth: String
+    ): Call<StoryResponse>
 }

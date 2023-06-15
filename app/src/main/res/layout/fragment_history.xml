@@ -20,7 +20,7 @@
             android:layout_marginEnd="16dp">
 
             <EditText
-                android:id="@+id/history_search"
+                android:id="@+id/message_search"
                 android:layout_width="208dp"
                 android:layout_height="35dp"
                 android:hint="@string/search_hint"
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginStart="26dp"
-                app:layout_constraintStart_toEndOf="@id/history_search"
+                app:layout_constraintStart_toEndOf="@id/message_search"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent">
 

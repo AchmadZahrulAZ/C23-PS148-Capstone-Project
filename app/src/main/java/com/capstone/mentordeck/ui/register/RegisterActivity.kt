@@ -16,13 +16,12 @@ import com.capstone.mentordeck.utils.isLoading
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RegisterActivity : AppCompatActivity() {
+class  RegisterActivity : AppCompatActivity() {
 
     private var _binding: ActivityRegisterBinding? = null
     private val binding get() = _binding
 
     private val viewModel: RegisterViewModel by viewModels()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -122,13 +121,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun setAnimation() {
-//        ObjectAnimator.ofFloat(registerBind?.logo, View.TRANSLATION_X, -30f, 30f).apply {
-//            duration = 6000
-//            repeatCount = ObjectAnimator.INFINITE
-//            repeatMode = ObjectAnimator.REVERSE
-//        }.start()
-
-//        val title = ObjectAnimator.ofFloat(binding?.titleSignup, View.ALPHA, 1f).setDuration(500)
+        val title = ObjectAnimator.ofFloat(binding?.tvTitle, View.ALPHA, 1f).setDuration(500)
         val nameEditText = ObjectAnimator.ofFloat(binding?.nameEditTextLayout, View.ALPHA, 1f).setDuration(500)
         val emailEditTextLayout = ObjectAnimator.ofFloat(binding?.emailEditTextLayout, View.ALPHA, 1f).setDuration(500)
         val phoneEditTextLayout = ObjectAnimator.ofFloat(binding?.phoneEditTextLayout, View.ALPHA, 1f).setDuration(500)
@@ -138,8 +131,7 @@ class RegisterActivity : AppCompatActivity() {
         val login = ObjectAnimator.ofFloat(binding?.haveAnAccountBase, View.ALPHA, 1f).setDuration(500)
 
         AnimatorSet().apply {
-//            title,
-            playSequentially(nameEditText, emailEditTextLayout, phoneEditTextLayout, cityEditTextLayout, passwordEditTextLayout, register, login)
+            playSequentially(title, nameEditText, emailEditTextLayout, phoneEditTextLayout, cityEditTextLayout, passwordEditTextLayout, register, login)
             startDelay = 500
         }.start()
     }
