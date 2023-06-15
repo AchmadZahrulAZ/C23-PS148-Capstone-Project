@@ -6,18 +6,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.mentordeck.R
 import com.capstone.mentordeck.adapter.HomeAdapter
-import com.capstone.mentordeck.adapter.LoadingStateAdapter
+import com.capstone.mentordeck.data.model.StoryModel
 import com.capstone.mentordeck.databinding.FragmentHomeBinding
-import com.capstone.mentordeck.ui.detail.ItemDetailActivity
+import com.capstone.mentordeck.ui.detail.detail.ItemDetailActivity
+import com.capstone.mentordeck.ui.profile.user.UserProfileActivity
+import com.capstone.mentordeck.ui.search.SearchActivity
 import com.capstone.mentordeck.utils.loadImageCircleCropDummy
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -42,61 +41,54 @@ class HomeFragment : Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.hide()
 
-        binding?.homeSearch?.setOnClickListener {
-            NavHostFragment
-                .findNavController(this@HomeFragment)
-                .navigate(R.id.action_navigation_home_to_searchFragment)
+        viewModel.storyList.observe(this) { storyList ->
+            if (storyList != null) {
+                setUpRecyclerData(storyList)
+            }
+        }
+
+        binding?.searchView?.setOnClickListener {
+            startActivity(Intent(requireContext(), SearchActivity::class.java))
+        }
+
+        binding?.btnFavorite?.setOnClickListener {
+            startActivity(Intent(requireContext(), ItemDetailActivity::class.java))
         }
 
         binding?.btnProfile?.setOnClickListener {
-            NavHostFragment
-                .findNavController(this@HomeFragment)
-                .navigate(R.id.action_navigation_home_to_userProfileFragment)
+            startActivity(Intent(requireContext(), UserProfileActivity::class.java))
         }
 
         binding?.btnProfile?.loadImageCircleCropDummy(R.drawable.furimuitehohoemu)
     }
 
+    private fun setUpRecyclerData(mentor: List<StoryModel>) {
+        val mentorList = ArrayList<StoryModel>()
+        for (m in mentor) {
+            mentorList.clear()
+            mentorList.addAll(mentor)
+        }
+
+        binding?.rvTopRatedList?.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding?.rvRecommendationList?.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        val homeAdapter = HomeAdapter(mentorList)
+        binding?.rvTopRatedList?.adapter = homeAdapter
+
+        binding?.rvRecommendationList?.adapter = homeAdapter
+    }
+
     private fun setViewModel() {
-        viewModel.getUser().observe(viewLifecycleOwner) { user ->
-            if (user.isLogin) {
-                getData(user.token)
-            }
+        viewModel.getUser().observe(this) { user ->
+            viewModel.getAllStories(user.token)
+
         }
     }
-
-    private fun getData(token: String) {
-        binding?.rvTopRatedList?.layoutManager =  LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding?.rvRecommendationList?.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
-        val storyAdapter = HomeAdapter()
-        binding?.rvTopRatedList?.adapter = storyAdapter.withLoadStateHeaderAndFooter(
-            header = LoadingStateAdapter {
-                storyAdapter.retry()
-            },
-
-            footer = LoadingStateAdapter {
-                storyAdapter.retry()
-            }
-        )
-
-        binding?.rvRecommendationList?.adapter = storyAdapter.withLoadStateHeaderAndFooter(
-            header = LoadingStateAdapter {
-                storyAdapter.retry()
-            },
-
-            footer = LoadingStateAdapter {
-                storyAdapter.retry()
-            }
-        )
-
-        viewModel.getAllStories(token).observe(viewLifecycleOwner) {
-            storyAdapter.submitData(lifecycle, it)
-        }
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
+

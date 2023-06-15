@@ -6,16 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginActivity">
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/ic_tutor_deck"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="@string/app_name"/>
+
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login"
+        android:text="@string/login_title"
+        android:layout_marginStart="16dp"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal2"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"
+        android:alpha="0"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailEditTextLayout"
@@ -31,7 +45,7 @@
         app:boxCornerRadiusBottomEnd="5dp"
         app:startIconDrawable="@drawable/ic_round_email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
         app:layout_constraintEnd_toEndOf="parent"
         android:alpha="0">
 
@@ -89,7 +103,8 @@
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout"/>
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout"
+        android:alpha="0"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginButton"

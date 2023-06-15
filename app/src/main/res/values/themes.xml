@@ -10,9 +10,18 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-<!--        <item name="chipCornerRadius">4dp</item>-->
+        <!--        <item name="chipCornerRadius">4dp</item>-->
 
     </style>
+
+    <style name="Theme.MentorDeck.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.MentorDeck.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.MentorDeck.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

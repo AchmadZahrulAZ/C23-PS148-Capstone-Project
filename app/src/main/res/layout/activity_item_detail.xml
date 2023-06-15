@@ -5,13 +5,66 @@
     xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.detail.ItemDetailActivity">
+    tools:context=".ui.detail.detail.ItemDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:backgroundTint="?attr/colorPrimaryVariant">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/back"
+                android:background="@drawable/ic_round_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/btn_base"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageView
+                    android:id="@+id/btn_favorite"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:contentDescription="@string/favorite"
+                    android:src="@drawable/ic_round_favorite_border"/>
+
+                <ImageView
+                    android:id="@+id/btn_profile"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="24dp"
+                    android:contentDescription="@string/profile"
+                    android:background="@drawable/shape_profile"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="100dp"
-        android:clipToPadding="false">
+        android:clipToPadding="false"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,6 +80,7 @@
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <ImageView
+                    android:id="@+id/iv_photo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:src="@tools:sample/avatars"
@@ -48,7 +102,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/les_fisika"
-                    style="@style/description"
+                    style="@style/detailTitle"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -65,37 +119,6 @@
                     android:layout_marginEnd="16dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/title"/>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/price">
-
-                    <ImageView
-                        android:id="@+id/iv_star"
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_marginStart="16dp"
-                        android:contentDescription="@string/review"
-                        android:src="@drawable/ic_round_star"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
-
-                    <TextView
-                        android:id="@+id/rating"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rating"
-                        style="@style/subtitle"
-                        android:layout_marginStart="2dp"
-                        app:layout_constraintStart_toEndOf="@+id/iv_star"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -141,6 +164,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/duration"
                         style="@style/subtitle"
+                        android:maxLines="1"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"/>
@@ -157,10 +181,11 @@
 
                     <TextView
                         android:id="@+id/date"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/mentoring_date"
+                        android:text="@string/tutoring_date"
                         style="@style/subtitle"
+                        android:maxLines="1"
                         android:layout_marginStart="2dp"
                         app:layout_constraintStart_toEndOf="@+id/comma1"
                         app:layout_constraintTop_toTopOf="parent"
@@ -178,10 +203,11 @@
 
                     <TextView
                         android:id="@+id/time"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/mentoring_time"
+                        tools:text="@string/tutoring_time"
                         style="@style/subtitle"
+                        android:maxLines="1"
                         android:layout_marginStart="2dp"
                         app:layout_constraintStart_toEndOf="@+id/comma2"
                         app:layout_constraintTop_toTopOf="parent"
@@ -199,10 +225,11 @@
 
                     <TextView
                         android:id="@+id/method"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/mentoring_method"
+                        tools:text="@string/tutoring_method"
                         style="@style/subtitle"
+                        android:maxLines="1"
                         android:layout_marginStart="2dp"
                         app:layout_constraintStart_toEndOf="@+id/comma3"
                         app:layout_constraintTop_toTopOf="parent"
@@ -334,8 +361,8 @@
 
                     <ImageView
                         android:id="@+id/iv_location"
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:src="@drawable/ic_round_location_on"
                         android:contentDescription="@string/location"
                         app:layout_constraintStart_toStartOf="parent"
@@ -346,7 +373,7 @@
                         android:id="@+id/location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="@string/location"
+                        android:text="@string/location"
                         android:layout_marginStart="2dp"
                         style="@style/subtitle"
                         app:layout_constraintStart_toEndOf="@+id/iv_location"
@@ -400,8 +427,8 @@
 
                         <ImageView
                             android:id="@+id/iv_star_bottom"
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
                             android:layout_marginStart="16dp"
                             android:contentDescription="@string/review"
                             android:src="@drawable/ic_round_star"
@@ -410,13 +437,48 @@
                             app:layout_constraintBottom_toBottomOf="parent"/>
 
                         <TextView
-                            android:id="@+id/rating_bottom"
+                            android:id="@+id/rating2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/rating"
+                            tools:text="@string/rating"
                             style="@style/subtitle"
                             android:layout_marginStart="2dp"
                             app:layout_constraintStart_toEndOf="@+id/iv_star_bottom"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_separator2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            android:text="@string/vertical_line"
+                            style="@style/subtitle"
+                            app:layout_constraintStart_toEndOf="@id/rating2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/review_total2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="@string/review_total"
+                            style="@style/subtitle"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            app:layout_constraintStart_toEndOf="@id/tv_separator2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_review2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:text="@string/review"
+                            style="@style/subtitle"
+                            app:layout_constraintStart_toEndOf="@id/review_total2"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"/>
 
@@ -466,30 +528,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/review_status_base"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/review_image_base"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/divider5">
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/divider6"
-                style="@style/divider"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/review_image_base"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/review_base"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/divider6">
+                app:layout_constraintTop_toBottomOf="@id/divider5">
 
                 <ImageView
                     android:id="@+id/reviewer_profile"
@@ -506,7 +551,7 @@
                     android:id="@+id/reviewer_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/name"
+                    tools:text="@string/name"
                     style="@style/description"
                     android:maxLines="1"
                     android:ellipsize="end"
@@ -548,7 +593,7 @@
                     android:id="@+id/revie_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/review_content"
+                    tools:text="@string/review_content"
                     style="@style/description"
                     android:maxLines="3"
                     android:ellipsize="end"

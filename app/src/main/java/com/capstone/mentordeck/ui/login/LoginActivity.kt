@@ -118,12 +118,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setAnimation() {
-//        ObjectAnimator.ofFloat(binding?.logo, View.TRANSLATION_X, -30f, 30f).apply {
-//            duration = 6000
-//            repeatCount = ObjectAnimator.INFINITE
-//            repeatMode = ObjectAnimator.REVERSE
-//        }.start()
-
         val title = ObjectAnimator.ofFloat(binding?.tvTitle, View.ALPHA, 1f).setDuration(500)
         val emailEditTextLayout = ObjectAnimator.ofFloat(binding?.emailEditTextLayout, View.ALPHA, 1f).setDuration(500)
         val passwordEditTextLayout = ObjectAnimator.ofFloat(binding?.passwordEditTextLayout, View.ALPHA, 1f).setDuration(500)
@@ -132,7 +126,6 @@ class LoginActivity : AppCompatActivity() {
         val register = ObjectAnimator.ofFloat(binding?.dontHaveAccountBase, View.ALPHA, 1f).setDuration(500)
 
         AnimatorSet().apply {
-//            title,
             playSequentially(title, emailEditTextLayout, passwordEditTextLayout, forgot, login, register)
             startDelay = 500
         }.start()

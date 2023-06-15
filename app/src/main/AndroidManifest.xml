@@ -11,8 +11,8 @@
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:name=".MainApplication"
@@ -36,9 +36,24 @@
         </provider>
 
         <activity
+            android:name=".ui.search.SearchActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.profile.user.EditUserProfileActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.profile.user.UserProfileActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ui.favorite.FavoriteActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
             android:name=".ui.splash.SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/SplashTheme"
             android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,7 +62,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.detail.ItemDetailActivity"
+            android:name=".ui.detail.detail.ItemDetailActivity"
             android:exported="false"
             android:screenOrientation="locked" />
         <activity
@@ -61,7 +76,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:screenOrientation="locked"/>
+            android:screenOrientation="locked" />
     </application>
 
 </manifest>
