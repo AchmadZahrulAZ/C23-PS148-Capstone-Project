@@ -7,16 +7,7 @@ const jwt = require("jsonwebtoken");
 
 admin.initializeApp({credential: admin.credential.cert(credentials)});
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAjpLR85ugwRU5l_JgqVp6KVTEd97HZu_M",
-  authDomain: "capstone-c23-ps148.firebaseapp.com",
-  databaseURL: "https://capstone-c23-ps148-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "capstone-c23-ps148",
-  storageBucket: "capstone-c23-ps148.appspot.com",
-  messagingSenderId: "328962493897",
-  appId: "1:328962493897:web:d220685510edb1cbd0ac18",
-  measurementId: "G-JZ5THDRV3H"
-};
+
 
 app.use(express.json());
 
