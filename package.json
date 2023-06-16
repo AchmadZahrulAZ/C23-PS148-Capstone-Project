@@ -1,23 +1,21 @@
 {
-  "name": "c23-ps148-capstone-project",
+  "name": "tutordeck",
   "version": "1.0.0",
-  "description": "Tutor Deck (Tutor Digital Education Creation Kit) is Product Based Capstone from Bangkit 2023 team C23-PS148.",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AchmadZahrulAZ/C23-PS148-Capstone-Project.git"
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AchmadZahrulAZ/C23-PS148-Capstone-Project/issues"
-  },
-  "homepage": "https://github.com/AchmadZahrulAZ/C23-PS148-Capstone-Project#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "firebase": "^9.22.2",
+    "firebase-admin": "^11.9.0",
+    "jsonwebtoken": "^9.0.0",
+    "nodemon": "^2.0.22"
   }
 }
