@@ -4,3 +4,11 @@ Tutor Deck (Tutor Digital Education Creation Kit) is Product Based Capstone from
 Hi-Fi Figma : https://www.figma.com/file/B0lwrssDkvmbUJ3hKKSZTS/UI?type=design&node-id=489%3A4238&t=OlBRmYDip7Km8WnM-1
 
 API Endpoints : https://capstone-c23-ps148.et.r.appspot.com/
+
+Contributors :
+- Gifary Divanda N. (Machine Learning)
+- Rizki Aulia A. (Machine Learning)
+- Safana Maraya N. (Machine Learning)
+- Achmad Zahrul Ali Z. (Cloud Computing)
+- Syammari Rama J. (Cloud Computing)
+- Putu Adi Saputra (Mobile Development)
